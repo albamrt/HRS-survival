@@ -11,3 +11,4 @@ The files have the following structure:
 - 2-2-competing-risks-time-varying-covariates.R: Tables and figures from the competing risks with time-varying covariates subsection.
 - 2-3-competing-risks-landmarks.R: Tables and figures from the competing risks with landmarks subsection.
 - 2-4-multi-state-model.R: Tables and figures from the multi-state models subsection.
+- 3-conclusions.R: Tables and figures from the conclusions section.
