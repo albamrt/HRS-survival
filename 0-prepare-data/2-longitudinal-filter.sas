@@ -8,7 +8,7 @@
 %inc "Y:\102_PREDICT\PROGRAMS\PREDICT - SETUP.sas";
 
 *************** IMPORT CSVs; 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-aclara-diagnostic-visit.xlsx"
+proc import datafile=".../predict-aclara-diagnostic-visit.xlsx"
      out = diagnostic_data
      dbms = xlsx replace;
      getnames = yes;
@@ -236,7 +236,7 @@ run;
 
 *************** EXPORT;
 proc export data = predict
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-longitudinal-no-filter.xlsx"
+    outfile=".../predict-longitudinal-no-filter.xlsx"
     dbms=xlsx  REPLACE;
 run;
 
@@ -245,7 +245,7 @@ run;
 %inc "Y:\114_ACLARA\PROGRAMS\ACLARA - SETUP.sas";
 
 *************** IMPORT CSVs; 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-aclara-diagnostic-visit.xlsx"
+proc import datafile=".../predict-aclara-diagnostic-visit.xlsx"
      out = diagnostic_data
      dbms = xlsx replace;
      getnames = yes;
@@ -372,7 +372,7 @@ run;
 
 *************** EXPORT;
 proc export data=aclara
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/aclara-longitudinal-no-filter.xlsx"
+    outfile=".../aclara-longitudinal-no-filter.xlsx"
     dbms=xlsx  REPLACE;
 run;
 
@@ -384,13 +384,13 @@ run;
 proc datasets library=WORK kill; run; quit;
 
 *************** IMPORT CSVs; 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-longitudinal-no-filter.xlsx"
+proc import datafile=".../predict-longitudinal-no-filter.xlsx"
      out=predict
      dbms=xlsx replace;
      getnames=yes;
 run;
 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/aclara-longitudinal-no-filter.xlsx"
+proc import datafile=".../aclara-longitudinal-no-filter.xlsx"
      out=aclara
      dbms=xlsx replace;
      getnames=yes;
@@ -498,7 +498,7 @@ run;
  
 *************** EXPORT AS CSV; 
 proc export data=data
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-aclara-longitudinal-no-filter.xlsx"
+    outfile=".../predict-aclara-longitudinal-no-filter.xlsx"
     dbms=xlsx REPLACE;
 run;
 
