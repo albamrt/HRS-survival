@@ -5,7 +5,7 @@
 %inc "Y:\102_PREDICT\PROGRAMS\PREDICT - SETUP.sas";
 
 *************** URINE; 
-proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20210920_UrineWilmut_Predict.xlsx"
+proc import datafile="...\20210920_UrineWilmut_Predict.xlsx"
      out=work.urinepw
      dbms=xlsx
      replace;
@@ -13,7 +13,7 @@ proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20210920_UrineWi
 	 sheet = "Orinas 500 uL";
 run;
 
-proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20210920_Urine_Predict_actualizada.xlsx"
+proc import datafile="...\20210920_Urine_Predict_actualizada.xlsx"
      out=work.urinep
      dbms=xlsx
      replace;
@@ -479,7 +479,7 @@ run;
 
 *************** EXPORT AS XLSX; 
 proc export data=predict
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-current-previous-creatinine-urine.xlsx"
+    outfile=".../predict-current-previous-creatinine-urine.xlsx"
     dbms=xlsx  REPLACE;
 run;
 
@@ -505,7 +505,7 @@ run;
 %inc "Y:\114_ACLARA\PROGRAMS\ACLARA - SETUP.sas";
 
 *************** URINE; 
-proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20211025_ACLARAOrinasWilmut.xlsx"
+proc import datafile="...\20211025_ACLARAOrinasWilmut.xlsx"
      out=work.urineaw
      dbms=xlsx
      replace;
@@ -513,7 +513,7 @@ proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20211025_ACLARAO
 	 sheet = "Hoja2";
 run;
 
-proc import datafile="\\10.34.75.200\alba.morato\tfm\data\urine\20211025_ACLARAOrinas15mL.xlsx"
+proc import datafile="...\20211025_ACLARAOrinas15mL.xlsx"
      out=work.urinea
      dbms=xlsx
      replace;
@@ -827,7 +827,7 @@ run;
 
 *************** EXPORT AS CSV; 
 proc export data=aclara
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/aclara-current-previous-creatinine-urine.xlsx"
+    outfile=".../aclara-current-previous-creatinine-urine.xlsx"
     dbms=xlsx REPLACE;
 run;
 
@@ -838,13 +838,13 @@ run;
 proc datasets library=WORK kill; run; quit;
 
 *************** IMPORT CSVs; 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-current-previous-creatinine-urine.xlsx"
+proc import datafile=".../predict-current-previous-creatinine-urine.xlsx"
      out=predict
      dbms=xlsx replace;
      getnames=yes;
 run;
 
-proc import datafile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/aclara-current-previous-creatinine-urine.xlsx"
+proc import datafile=".../0-select-data/data/aclara-current-previous-creatinine-urine.xlsx"
      out=aclara
      dbms=xlsx replace;
      getnames=yes;
@@ -935,6 +935,6 @@ run;
 
 *************** EXPORT AS CSV; 
 proc export data=data
-    outfile="\\10.34.75.200\alba.morato/tfm/0-select-data/data/predict-aclara-diagnostic-visit.xlsx"
+    outfile=".../predict-aclara-diagnostic-visit.xlsx"
     dbms=xlsx REPLACE;
 run;
