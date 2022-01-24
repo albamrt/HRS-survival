@@ -11,7 +11,6 @@ invisible(lapply(list.of.packages, library, character.only = TRUE))
 
 # set directory:
 dir <- 'U:'
-dir <- '//10.34.75.200/alba.morato'
 
 # read data:
 data <- read_excel(paste0(dir, "/tfm/0-select-data/data/predict-aclara-longitudinal-no-filter.xlsx"))
